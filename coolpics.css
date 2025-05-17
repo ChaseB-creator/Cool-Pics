@@ -84,14 +84,16 @@ footer {
   font-size: 0.9em;
 }
 
-/* Split Into Two Columns */
+.hide {
+  display: none;
+}
+
 @media (min-width: 700px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Split Into One Column */
 @media (min-width: 1000px) {
   #menuButton {
     display: none;
@@ -107,4 +109,51 @@ footer {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+dialog.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog.viewer img {
+  width: 100%;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  dialog.viewer img {
+    max-width: 95vw;
+    max-height: 95vw;
+  }
+}
+
+dialog.viewer .close-viewer {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
